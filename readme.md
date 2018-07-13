@@ -1,2 +1,6 @@
 # My DatingApp
-This is my DatingApp .net/Angular training
+This is my DatingApp 
+
+## Frameworks
+Angular
+.net
