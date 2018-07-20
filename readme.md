@@ -1,5 +1,5 @@
 # My DatingApp
-This is my DatingApp 
+Simple DatingApp 
 
 ## Frameworks
 Angular
