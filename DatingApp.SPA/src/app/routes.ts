@@ -10,9 +10,9 @@ export const appRoutes: Routes = [
 {
   path: '',
   runGuardsAndResolvers: 'always',
-  canActivate: [AuthGuard],
+  canActivate: [AuthGuard], // anything (path: '') we want to protect is covered in parent(authGuard covers all children routes)
   children: [
-    { path: 'members', component: MemberListComponent, canActivate: [AuthGuard] } ,
+    { path: 'members', component: MemberListComponent } ,
     { path: 'messages', component: MessagesComponent },
     { path: 'lists', component: ListsComponent },
   ]
