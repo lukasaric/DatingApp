@@ -1,4 +1,4 @@
-# My DatingApp
+# DatingApp
 Simple DatingApp 
 
 ## Frameworks
