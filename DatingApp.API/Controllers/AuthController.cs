@@ -27,8 +27,8 @@ namespace DatingApp.API.Controllers
         [HttpPost("register")] //we use HttpPost cuz we need to get information from the users
         public async Task<IActionResult> Register([FromBody]UserForRegisterDto userForRegisterDto)
         {
-            if(!string.IsNullOrEmpty(userForRegisterDto.Username))
-                userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
+
+            userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
 
             if(await _repo.UserExists(userForRegisterDto.Username))
                 ModelState.AddModelError("Username", "Username already exists");
@@ -52,14 +52,14 @@ namespace DatingApp.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody]UserForLoginDto userForLoginDto)
         {
-                if(!ModelState.IsValid)
-                    return BadRequest(ModelState);
-                    
+            
+                throw new Exception("Computer says no!");
+            
                 var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower(),userForLoginDto.Password);
 
                 if(userFromRepo == null)
                 return Unauthorized();
-
+                
                 // generate token
             
                 var tokenHandler = new JwtSecurityTokenHandler();
